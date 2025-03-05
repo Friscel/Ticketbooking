@@ -5,9 +5,9 @@
         static void Main(string[] args)
         {
 
-            Console.WriteLine("WELCOME TO THE TICKET BOOKING SYSTEM");
+            Console.WriteLine("AVENGERS(END GAME) TICKET BOOKING");
 
-            int availableTickets = 20;
+            int availableTickets = 55;
 
             string[] actions = new string[] { "[1] View Available Tickets", "[2] Book a Ticket", "[3] Cancel a Ticket", "[4] Exit" };
 
