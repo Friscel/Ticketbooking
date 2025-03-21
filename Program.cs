@@ -13,7 +13,6 @@ namespace TicketBooking
             Console.WriteLine("MOVIE TICKET BOOKING SYSTEM");
 
             int movieChoice;
-
             do
             {
                 movieChoice = SelectMovie();
@@ -34,7 +33,6 @@ namespace TicketBooking
 
             Console.WriteLine("Exiting program...");
         }
-
         static void DisplayMovies()
         {
             Console.WriteLine("\nAvailable Movies:");
@@ -43,7 +41,6 @@ namespace TicketBooking
                 Console.WriteLine($"[{i + 1}] {movies[i]} - Available Tickets: {availableTickets[i]}");
             }
         }
-
         static int SelectMovie()
         {
             int choice;
@@ -56,22 +53,19 @@ namespace TicketBooking
                     if (choice == 0) return -1;
                     if (choice >= 1 && choice <= movies.Length) return choice - 1;
                 }
-
                 Console.WriteLine("Invalid selection. Please try again.");
 
             } while (true);
         }
-
         static void DisplayActions()
         {
-            Console.WriteLine("\n-------------------------");
+            Console.WriteLine("\n-----------------------------");
             Console.WriteLine("\nACTIONS:");
             foreach (var action in actions)
             {
                 Console.WriteLine(action);
             }
         }
-
         static int GetUserInput()
         {
             Console.Write("Select Action: ");
@@ -79,11 +73,9 @@ namespace TicketBooking
             {
                 return input;
             }
-
             Console.WriteLine("Invalid input. Please enter a number between 1 and 5.");
             return GetUserInput();
         }
-
         static void HandleMovieAction(int action, int movieChoice)
         {
             switch (action)
@@ -105,12 +97,10 @@ namespace TicketBooking
                     break;
             }
         }
-
         static void DisplayAvailableTickets(int movieChoice)
         {
             Console.WriteLine($"Available tickets for {movies[movieChoice]}: {availableTickets[movieChoice]}");
         }
-
         static void UpdateTickets(int action, int movieChoice, int amount)
         {
             if (action == 2) 
@@ -130,10 +120,8 @@ namespace TicketBooking
                 availableTickets[movieChoice] += amount;
                 Console.WriteLine("Ticket canceled successfully.");
             }
-
             DisplayAvailableTickets(movieChoice);
         }
-
         static void BookTicket(int movieChoice)
         {
             Console.Write("Enter number of tickets to book: ");
@@ -146,7 +134,6 @@ namespace TicketBooking
                 Console.WriteLine("Invalid number. Please enter a valid amount.");
             }
         }
-
         static void CancelTicket(int movieChoice)
         {
             Console.Write("Enter number of tickets to cancel: ");
